@@ -1,0 +1,22 @@
+# Brightness controls
+ctrl + shift + alt + Up
+    doas light -A 10
+
+ctrl + shift + alt + Down
+    doas light -U 10
+
+# Run pind with doas
+ctrl + shift + r
+    pindc doas
+
+# Volume controls
+ctrl + shift + Right
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+ctrl + shift + Left
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+# Screenshot
+ctrl + shift + m
+    maim -s | xclip -selection clipboard -t image/png
+

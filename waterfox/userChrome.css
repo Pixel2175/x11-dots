@@ -1,0 +1,315 @@
+:root {
+	/* Monochromatic color palette - close harmonious colors */
+	/* --primary-dark: #2d2a28;        /* darkest base */ */
+	/* --primary-medium: #3d3935;      /* medium base */ */
+	/* --primary-light: #4d453e;       /* lighter base */ */
+	/* --primary-lighter: #5d534a;     /* hover/accent */ */
+	/* --text-primary: #d4c4a8;        /* light text */ */
+	/* --text-secondary: #a89984;      /* muted text */ */
+	/* --accent: #6d635a;              /* subtle accent */ */
+	/**/
+	--tab-font: 'CaskaydiaMonoNerdFont-Bold';
+	--urlbar-font: 'CaskaydiaMonoNerdFont-Bold';
+	--urlbar-height-setting: 24px;
+	--tab-min-height: 18px !important;
+	
+	--arrowpanel-menuitem-padding: 2px !important;
+	--arrowpanel-border-radius: 0px !important;
+	--arrowpanel-menuitem-border-radius: 0px !important;
+	--toolbarbutton-border-radius: 0px !important;
+	--toolbarbutton-inner-padding: 0px 2px !important;
+	--toolbar-field-focus-background-color: var(--primary-lighter) !important;
+	--toolbar-field-background-color: var(--primary-light) !important;
+	--toolbar-field-focus-border-color: transparent !important;
+}
+
+/* --- GENERAL DEBLOAT ---------------------------------- */
+#statuspanel { display: none !important; }
+menupopup, panel { --panel-border-radius: 0px !important; }
+menu, menuitem, menucaption { border-radius: 0px !important; }
+menupopup > #context-navigation { display: none !important; }
+menupopup > #context-sep-navigation { display: none !important; }
+
+/* --- DEBLOAT NAVBAR ----------------------------------- */
+#back-button { display: none; }
+#forward-button { display: none; }
+#reload-button { display: none; }
+#stop-button { display: none; }
+#home-button { display: none; }
+#library-button { display: none; }
+#customizableui-special-spring1, #customizableui-special-spring2 { display: none; }
+.private-browsing-indicator-with-label { display: none; }
+
+/* --- STYLE NAVBAR ------------------------------------ */
+toolbar .toolbarbutton-1 { padding: 0 0 !important; }
+#downloads-button { margin-left: 2px !important; }
+#PanelUI-menu-button { padding: 0px 4px 0px 0px !important; }
+
+#urlbar-container {
+	--urlbar-container-height: var(--urlbar-height-setting) !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	font-family: var(--urlbar-font, 'monospace');
+	font-size: 11px;
+}
+
+#urlbar {
+	--urlbar-height: var(--urlbar-height-setting) !important;
+	--urlbar-toolbar-height: var(--urlbar-height-setting) !important;
+	min-height: var(--urlbar-height-setting) !important;
+	border-color: var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25)) !important;
+}
+
+#urlbar-input {
+	margin-left: 0.4em !important;
+	margin-right: 0.4em !important;
+	color: var(--text-primary) !important;
+}
+
+#urlbar > .urlbar-input-container {
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+#navigator-toolbox {
+	border: none !important;
+	background-color: var(--primary-dark) !important;
+}
+
+/* keep pop-up menus from overlapping with navbar */
+#widget-overflow { margin: 3px !important; }
+#customizationui-widget-panel { margin: 3px !important; }
+#unified-extensions-panel { margin-top: 3px !important; }
+#appMenu-popup { margin-top: 3px !important; }
+
+/* --- UNIFIED EXTENSIONS BUTTON ------------------------ */
+#unified-extensions-view { --uei-icon-size: 16px; }
+.unified-extensions-item-message-deck,
+#unified-extensions-view > .panel-header,
+#unified-extensions-view > toolbarseparator,
+#unified-extensions-manage-extensions { display: none !important; }
+
+.panel-subview-body { padding: 3px 0px !important; }
+#unified-extensions-view .toolbarbutton-icon { padding: 0 !important; }
+.unified-extensions-item-contents {
+	line-height: 1 !important;
+	white-space: nowrap !important;
+}
+#unified-extensions-panel .unified-extensions-item { margin-block: 0 !important; }
+.toolbar-menupopup :is(menu, menuitem), .subview-subheader, panelview
+.toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+	padding: 4px !important;
+}
+
+/* --- DEBLOAT URLBAR ----------------------------------- */
+#pageActionButton { display: none; }
+#pocket-button { display: none; }
+#urlbar-zoom-button { display: none; }
+#tracking-protection-icon-container { display: none !important; }
+#urlbar-searchmode-switcher { display: none; }
+#searchmode-switcher-chicklet { display: none !important; }
+#identity-icon-box {
+	margin-inline-end: 0 !important;
+	padding: 0 4px !important;
+}
+#urlbar-go-button { display: none; }
+#userContext-label, #userContext-indicator { display: none !important;}
+
+/* --- STYLE TAB TOOLBAR -------------------------------- */
+#titlebar {
+	--proton-tab-block-margin: 0px !important;
+	--tab-block-margin: 0px !important;
+	background-color: var(--primary-dark) !important;
+}
+
+#TabsToolbar, .tabbrowser-tab {
+	max-height: var(--tab-min-height) !important;
+	font-size: 11px !important;
+}
+
+/* Change color of normal tabs */
+tab:not([selected="true"]) {
+	background-color: var(--primary-medium) !important;
+	color: var(--identity-icon-color, var(--text-secondary)) !important;
+}
+
+tab {
+	font-family: var(--tab-font, monospace);
+	font-weight: bold;
+	border: none !important;
+	padding-top: 0 !important;
+}
+
+.tab-content { padding: 0 0 0 var(--tab-inline-padding); }
+
+.tab-background {
+	margin-block: 0 !important;
+	min-height: var(--tab-min-height);
+	outline-offset: 0 !important;
+}
+
+/* safari style tab width */
+.tabbrowser-tab[fadein] {
+	max-width: 100vw !important;
+	border: none
+}
+
+/* Hide close button on tabs */
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button { display: none !important; }
+
+.tabbrowser-tab {
+	padding-inline: 0px !important;
+	--tab-label-mask-size: 1em !important;
+	overflow-clip-margin: 0px !important;
+}
+
+/* Tab: selected colors */
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-content {
+	background: var(--primary-lighter) !important;
+	color: var(--identity-icon-color, var(--text-primary)) !important;
+}
+
+/* Tab: hovered colors */
+#tabbrowser-tabs .tabbrowser-tab:hover:not([selected]) .tab-content {
+	background: var(--primary-light) !important;
+}
+
+/* hide window controls */
+.titlebar-buttonbox-container { display: none; }
+.titlebar-spacer { display: none !important; }
+
+/* disable tab shadow */
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+    box-shadow: none !important;
+}
+
+#pinned-tabs-container { margin-inline-end: 0 !important; }
+#alltabs-button { display: none !important }
+
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+	height: var(--tab-min-height) !important;
+}
+
+#tabbrowser-tabs {
+	min-height: var(--tab-min-height) !important;
+	background-color: var(--primary-dark) !important;
+}
+
+#scrollbutton-up, #scrollbutton-down { display: none !important; }
+#tabs-newtab-button { display: none !important; }
+#private-browsing-indicator-with-label { display: none; }
+
+/* --- AUTOHIDE NAVBAR ---------------------------------- */
+:root { --uc-navbar-transform: calc(0px - var(--urlbar-height-setting)); }
+#navigator-toolbox > div { display: contents; }
+
+:root[sessionrestored] :where(
+	#nav-bar,
+	#PersonalToolbar,
+	#tab-notification-deck,
+	.global-notificationbox
+) { transform: translateY(var(--uc-navbar-transform)); }
+
+:root:is([customizing], [chromehidden*="toolbar"]) :where(
+	#nav-bar,
+	#PersonalToolbar,
+	#tab-notification-deck,
+	.global-notificationbox
+) {
+	transform: none !important;
+	opacity: 1 !important;
+}
+
+#nav-bar:not([customizing]) {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+#titlebar {
+	position: relative;
+	z-index: 3;
+}
+
+#navigator-toolbox,
+#sidebar-box,
+#sidebar-main,
+#sidebar-splitter,
+#tabbrowser-tabbox { z-index: auto !important; }
+
+#navigator-toolbox:focus-within > .browser-toolbar {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+#titlebar:hover ~ .browser-toolbar,
+.browser-titlebar:hover ~ :is(#nav-bar, #PersonalToolbar),
+#nav-bar:hover,
+#nav-bar:hover + #PersonalToolbar {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+:root[sessionrestored] #urlbar[popover] {
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(var(--uc-navbar-transform));
+}
+
+#mainPopupSet:has(> [panelopen]:not(
+	#ask-chat-shortcuts,
+	#selection-shortcut-action-panel,
+	#chat-shortcuts-options-panel,
+	#tab-preview-panel
+)) ~ toolbox #urlbar[popover],
+.browser-titlebar:is(:hover, :focus-within) ~ #nav-bar #urlbar[popover],
+#nav-bar:is(:hover, :focus-within) #urlbar[popover],
+#urlbar-container > #urlbar[popover]:is([focused], [open]) {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+#mainPopupSet:has(> [panelopen]:not(
+	#ask-chat-shortcuts,
+	#selection-shortcut-action-panel,
+	#chat-shortcuts-options-panel,
+	#tab-preview-panel
+)) ~ #navigator-toolbox > .browser-toolbar {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+:root[sessionrestored]:not([chromehidden~="toolbar"]) > body > #browser {
+	margin-top: var(--uc-navbar-transform);
+}
+
+/* Additional styling for cohesive look */
+toolbar .toolbarbutton-1:hover { background-color: var(--primary-light) !important; }
+#downloads-button, #PanelUI-menu-button { color: var(--text-primary) !important; }
+menupopup, panel { 
+	background-color: var(--primary-medium) !important;
+	border: 1px solid var(--accent) !important;
+}
+menu, menuitem { color: var(--text-secondary) !important; }
+menu:hover, menuitem:hover { 
+	background-color: var(--primary-light) !important;
+	color: var(--text-primary) !important;
+}
+#unified-extensions-view {
+	background-color: var(--primary-medium) !important;
+	border: 1px solid var(--accent) !important;
+}
+.unified-extensions-item-contents { color: var(--text-secondary) !important; }
+.unified-extensions-item:hover .unified-extensions-item-contents { color: var(--text-primary) !important; }
+#unified-extensions-panel .unified-extensions-item:hover { background-color: var(--primary-light) !important; }
+#urlbar {
+	background-color: var(--primary-light) !important;
+	border: 1px solid var(--accent) !important;
+}
+#urlbar:focus-within {
+	background-color: var(--primary-lighter) !important;
+	border-color: var(--primary-lighter) !important;
+}
